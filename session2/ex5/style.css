@@ -1,0 +1,31 @@
+.container1{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.container2{
+    width: 20%;
+    margin: auto;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.container2 h1{
+    text-align: center;
+}
+.boxhead{
+    width: 80%;
+    margin: auto;
+    background-color: rgb(207, 195, 179);
+}
+.boxmain{
+    width: 80%;
+    margin: auto;
+    
+}
+.boxfooter{
+    width: 80%;
+    margin: auto;
+}
+.boxhead h1{
+    text-align: center;
+}
