@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex6</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="boxhead">
+        <h1>Trang web bán hàng</h1>
+        <nav>
+          <ul>
+            <li><a href="ex1.html">ex1</a></li>
+            <li><a href="ex2.html">ex2</a></li>
+            <li><a href="ex3.html">ex3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="boxmain">
+        <hr />
+        <section>
+          <h2>Thông tin sản phẩm</h2>
+          <table border="1">
+            <thead>
+              <th>Tên sản phẩm</th>
+              <th>Mô tả</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sản phẩm 1</td>
+                <td>Mô tả sản phẩm 1</td>
+                <td>100.000d</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Sản phẩm 2</td>
+                <td>Mô tả sản phẩm 2</td>
+                <td>200.000d</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Sản phẩm 3</td>
+                <td>Mô tả sản phẩm 3</td>
+                <td>300.000d</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>Thông tin người dùng</h2>
+          <form action="https://www.google.com" method="get">
+            <label for="name">Họ và tên: </label>
+            <input type="text" id="name" name="name" />
+            <br />
+            <label for="email">Email: </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="abc@gmail.com"
+            />
+            <br />
+            <label for="phone">Số điện thoại: </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}"
+              placeholder="012-3456-789"
+            />
+            <br />
+            <label for="addr">Địa chỉ: </label>
+            <input type="text" id="addr" name="addr" />
+            <br />
+            <input type="submit" value="Đặt hàng" />
+          </form>
+        </section>
+        <br />
+        <hr />
+      </div>
+    </main>
+    <footer>
+      <div class="boxfooter">&copy;2023 Trang web bán hàng</div>
+    </footer>
+  </body>
+</html>
