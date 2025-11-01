@@ -1,0 +1,12 @@
+.box1{
+    box-sizing: content-box;
+    width: 500px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    background-color: bisque;
+}
+button:hover{
+    color: white;
+    background-color: green;
+}

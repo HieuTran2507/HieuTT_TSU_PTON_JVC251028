@@ -1,0 +1,13 @@
+.box1{
+    width: 80%;
+    margin: auto;
+}
+.txtclr{
+color: blueviolet;
+}
+
+table{
+    margin-left: 100px;
+    border-left: 10px solid #f28500;
+    background-color: aliceblue;
+}
