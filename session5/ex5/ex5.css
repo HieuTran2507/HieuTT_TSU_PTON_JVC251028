@@ -1,0 +1,35 @@
+div{
+    width: 200px;
+    height: 70px;
+    background-color: #cecece;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 35px;
+    margin-left: 50px;
+    transition: 1s;
+}
+.box:hover:nth-of-type(1){
+    background-color: gray;
+    color: white;
+}
+.box:hover:nth-of-type(2){
+    background-color: aqua;
+    color: white;
+}
+.box:hover:nth-of-type(3){
+    transform: scale(1.1);
+}
+.box:hover:nth-of-type(4){
+    transform: scale(0.9);
+}
+.box:hover:nth-of-type(5){
+    transform: rotate(-45deg);
+}
+.box:hover:nth-of-type(6){
+    border-radius: 50%;
+}
+.box:hover:nth-of-type(7){
+    border: 10px solid blue;
+}
