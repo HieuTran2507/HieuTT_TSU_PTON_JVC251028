@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SS3-ex7</title>
+    <style>
+      div {
+        width: 50%;
+        margin: auto;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="https:myserver.com" method="get">
+        <h1 style="background-color: brown; color: white; text-align: center">
+          sở thích của bạn
+        </h1>
+        <label for="ten" style="color: blue">Họ và tên</label>
+        <input type="text" id="ten" name="ten" />
+        <br />
+        <label for="email" style="color: blue">Email</label>
+        <input type="text" id="ten" name="email" />
+        <br />
+
+        <table>
+          <tr>
+            <td>sở thích</td>
+            <td>
+              <input type="checkbox" id="tt" name="tt" />
+              <label for="sothich" style="color: red">thể thao</label>
+            </td>
+            <td>
+              <input type="checkbox" id="an" name="am" />
+              <label for="sothich" style="color: red">âm nhạc</label>
+            </td>
+            <td>
+              <input type="checkbox" id="ds" name="ds" />
+              <label for="sothich" style="color: red">đọc sách</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" id="lw" name="lw" />
+              <label for="sothich" style="color: red">lướt web</label>
+            </td>
+            <td>
+              <input type="checkbox" id="cg" name="cg" />
+              <label for="sothich" style="color: red">chơi game</label>
+            </td>
+            <td>
+              <input type="checkbox" id="da" name="da" />
+              <label for="sothich" style="color: red">điện ảnh</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" id="dl" name="dl" />
+              <label for="sothich" style="color: red">du lịch</label>
+            </td>
+          </tr>
+        </table>
+        <input type="submit" />
+        <input type="reset" />
+      </form>
+    </div>
+  </body>
+</html>
