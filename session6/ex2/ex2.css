@@ -1,0 +1,32 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+    padding: 20px;
+    background-color: gainsboro;
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+}
+.container h1{
+    text-align: center;
+}
+.container button{
+    background-color: blue;
+    color: white;
+    width: 360px;
+    padding: 10px;
+}
+.container input{
+    width: 360px;
+    height: 25px;
+}

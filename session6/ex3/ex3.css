@@ -1,0 +1,62 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+/* header */
+.boxheader{
+    background-color: rgb(59, 54, 54);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+.boxheader table{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.boxheader a{
+    color: white;
+    text-decoration: none;
+}
+/* main */
+.boxmain1{
+    background-color: gainsboro;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.boxmain1 table{
+    width: 50%;
+    margin: auto;
+}
+.boxmain2 table{
+    width: 100%;
+    text-align: center;
+}
+.boxmain2 a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+}
+.boxmain2 a:hover{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6)
+}
+/* footer */
+.boxfooter{
+    background-color: gainsboro;
+    text-align: center;
+    padding: 20px;
+}
+.boxfooter a{
+    text-decoration: none;
+}
+
