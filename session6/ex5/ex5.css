@@ -1,0 +1,82 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* header */
+.boxheader {
+  width: 80%;
+  margin: auto;
+  background-color: green;
+  padding: 15px;
+  color: white;
+  position: relative;
+}
+.boxheader table {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.boxheader td {
+  padding-left: 15px;
+}
+.boxheader a {
+  color: white;
+  text-decoration: none;
+}
+/* main */
+.boxmain {
+  position: relative;
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  background-color: gainsboro;
+}
+.boxmain a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+}
+.boxmain a:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+.boxcontent {
+  position: absolute;
+  /* border: 1px solid red; */
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.boxmain2 {
+  width: 80%;
+  margin: auto;
+}
+.boxmain2 table {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.boxmain2 a {
+  display: inline-block;
+  text-decoration: none;
+  background: gainsboro;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+}
+/* footer */
+.boxfooter {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,94 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.boxmain {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  /* border: 1px solid black; */
+}
+/* .cp2 {
+  border: 5px solid red;
+} */
+/* component 1 */
+.table1 {
+  border-left: 10px solid orange;
+  margin-left: 5%;
+  font-size: 50px;
+  background-color: gainsboro;
+  width: 95%;
+}
+.table2 {
+  width: 100%;
+}
+.table2 td {
+  text-align: center;
+  width: 50%;
+}
+.table2 img {
+  width: 100%;
+}
+.cp1 h1,
+p {
+  text-align: justify;
+}
+
+/* component 2 */
+.cp2 img {
+  margin-top: 10px;
+  width: 100%;
+}
+.boximg {
+  position: relative;
+}
+.boximg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+.boximg h2 {
+  position: absolute;
+  bottom: 10px;
+  z-index: 1;
+  color: white;
+  font-size: 40px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* component 3 */
+.cp3 {
+  background-color: gainsboro;
+  width: 80%;
+}
+.cp3 table {
+  padding: 10px;
+}
+/* component accordion */
+.accordion {
+  width: 100%;
+  border: 1px solid black;
+  cursor: pointer; /* chuyển trỏ chuột thành pointer */
+  padding: 20px;
+  font-size: 20px;
+  transition: 1s;
+  text-align: left;
+}
+.item {
+  background-color: white;
+  text-align: justify;
+  border: 1px solid black;
+  padding: 10px;
+  padding-left: 50px;
+  display: none;
+}
+.active,
+.accordion:hover {
+  background-color: aqua;
+  color: blue;
+}
