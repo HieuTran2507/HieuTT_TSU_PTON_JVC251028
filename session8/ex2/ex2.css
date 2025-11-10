@@ -1,0 +1,28 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.item {
+  background-color: lightblue;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  width: calc((100% - 30px) / 4);
+}
+@media screen and (max-width: 1024px) {
+  .item {
+    width: calc((100% - 10px) / 2);
+  }
+}
+@media screen and (max-width: 768px) {
+  .item {
+    width: 100%;
+  }
+}

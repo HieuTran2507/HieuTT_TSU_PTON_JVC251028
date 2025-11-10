@@ -1,0 +1,26 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.item {
+  background-color: lightblue;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  width: calc(50% - 10px);
+}
+.large {
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .item {
+    width: 100%;
+  }
+}
