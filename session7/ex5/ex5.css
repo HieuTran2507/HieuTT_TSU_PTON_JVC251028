@@ -1,0 +1,30 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.itemcontainer{
+    width: 50%;
+    height: 120px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.item{
+    background-color: blue;
+    color: white;
+    height: 55px;
+    line-height: 50px;
+    text-align: center;
+    width: calc(50% - 5px);
+}
+.big{
+    width: calc(50% - 10px);
+    height: 120px;
+}

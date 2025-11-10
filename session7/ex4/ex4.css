@@ -1,0 +1,36 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+    background-color: blue;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.container{
+    display: flex;
+    gap: 10px;
+    height: calc(100vh - 120px);
+}
+.sidebar{
+    width: 25%;
+    background-color: green;
+    color: white;
+}
+.content{
+    flex: 1;
+    /* flex: 1; khiến phần tử chiếm đều không gian còn lại trong container flex, chia đều với các phần tử khác cũng có flex: 1;. */
+    background-color: brown;
+    color: white;
+}
+.footer{
+    background-color: blueviolet;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+}

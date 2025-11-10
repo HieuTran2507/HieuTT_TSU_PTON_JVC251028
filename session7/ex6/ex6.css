@@ -1,0 +1,54 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+    color: white;
+    background-color: black;
+}
+.headercontainer{
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+}
+.logo{
+    width: 80%;
+    font-size: 30px;
+}
+.menu{
+    flex: 1;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+.maincontainer{
+    width: 40%;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.main1{
+    background-color: gainsboro;
+    width: 100%;
+    padding: 15px;
+    text-align: justify;
+}
+.footer{
+    color: white;
+    background-color: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
