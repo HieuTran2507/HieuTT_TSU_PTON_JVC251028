@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.box1 {
+  background-color: #fffcf4;
+}
+.header {
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.logo {
+  font-size: 24px;
+}
+.menu div {
+  font-size: 16px;
+}
+.menu button {
+  width: 114px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 24.5px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+.main {
+  padding-top: 50px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box2 {
+  width: 470px;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box2 h1 {
+  font-size: 55px;
+  font-weight: 700;
+}
+.box2 p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.box3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  height: 645px;
+  margin: auto;
+  margin-top: 100px;
+}
+.box3-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.card img {
+  width: calc((100% - 20px) / 3);
+}
+.box4 {
+  width: 90%;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.box4-L {
+  width: calc(50% - 5px);
+}
+.up-img {
+  transform: translateY(-50px);
+}
+.box4-R {
+  width: calc(50% - 5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.box5 {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.box5-L {
+  width: calc(50% - 5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 150px 0;
+}
+.box5-R {
+  width: calc(50% - 5px);
+}
+.box6 {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px 0;
+}
+.box6-1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 50px;
+}
+.box6-1 img {
+  width: calc((100% - 20px) / 3);
+}
