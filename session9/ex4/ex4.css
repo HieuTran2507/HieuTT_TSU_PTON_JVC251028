@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: Arial, sans-serif;
+}
+.box1 {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding-bottom: 20px;
+}
+.nav {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+.btn1 {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.box1-1 {
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.box1-1L {
+  width: 50%;
+}
+.box1-1R {
+  width: 20%;
+}
+.box1-1R img {
+  width: 100%;
+}
+.box1-2 {
+  position: absolute;
+  z-index: 2;
+  top: 80px;
+  left: 870px;
+}
+.box1-3 {
+  position: absolute;
+  z-index: 3;
+  top: -10px;
+  left: 500px;
+}
+.box1-4 {
+  position: absolute;
+  z-index: 4;
+  top: 0px;
+  left: 500px;
+}
+.box1-5 {
+  position: absolute;
+  z-index: 4;
+  top: 350px;
+  left: 800px;
+}
+.box1-6 {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
