@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* body{
+    padding: 40px;
+} */
+.flex-container {
+    display: flex; /*tiền đề để sử dụng các thuộc tính khác*/
+    flex-direction: row;
+    justify-content:center; /*đi với main axis*/
+    align-items: center; /*đi với cross axis*/
+    height: 100vh;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    text-align: center;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center; /*căn chỉnh item các phần tủ con theo cross axis*/
+
+}
+
+.item-1 {
+    order: 1;
+    flex: 1;
+}
+.item-2 {
+    order: 2;
+    flex: 3;
+}
+.item-3 {
+    order: 3;
+    flex: 2;
+}
