@@ -1,0 +1,11 @@
+const fNum = 10;
+const sNum = 20;
+console.log(`ket qua = ` ,fNum+sNum);
+console.log(`ket qua = ` ,fNum-sNum);
+console.log(`ket qua = ` ,fNum*sNum);
+console.log(`ket qua = ` ,fNum/sNum);
+console.log(`ket qua = ` ,fNum%sNum);
+console.log(Math.floor(0.6));
+console.log(Math.ceil(0.6));
+console.log(Math.round(0.6));
+console.log(Math.round(0.3));
