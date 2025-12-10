@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SS17-Ex4</title>
+    <style>
+      .flex {
+        display: flex;
+        gap: 10px;
+      }
+      .item {
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+      }
+      .item:nth-child(1) {
+        background-color: yellow;
+      }
+      .item:nth-child(2) {
+        background-color: green;
+      }
+      .item:nth-child(3) {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>change background-color</h1>
+    <p>mouse over the square</p>
+    <div class="flex">
+      <div class="item" id="yellow"></div>
+      <div class="item" id="green"></div>
+      <div class="item" id="gray"></div>
+    </div>
+    <script src="./ex4.js"></script>
+  </body>
+</html>

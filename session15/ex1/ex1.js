@@ -15,19 +15,20 @@ function bai1(){
 function bai2(){
     let arr = prompt(`nhập vào dãy số cách nhau bằng khoảng trống`);
     let arrSplit = arr.split(" ");
-    let max = arrSplit[0];
+    let max = Number(arrSplit[0]);
     for(let i in arrSplit){
-        if(arrSplit[i]>max ) max = arrSplit[i];
+        if(Number(arrSplit[i])>max ) max = Number(arrSplit[i]);
     }
     console.log(`số lớn nhất là ${max}`);
 }
 function bai3(){
     let arr = prompt(`nhập vào dãy số cách nhau bằng khoảng trống`);
     let arrSplit = arr.split(" ");
-    let max = arrSplit[0];
+    let max = Number(arrSplit[0]);
     let avg = 0;
     for(let i in arrSplit){
-        if(arrSplit[i]>max ) max = arrSplit[i];
+        let num = Number(arrSplit[i]);
+        if(num>max ) max = num;
         avg += parseInt(arrSplit[i]);
     }
     avg = avg/arrSplit.length;

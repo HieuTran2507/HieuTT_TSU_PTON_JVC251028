@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box1 {
+    background-color: rgb(204, 42, 42);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+.title {
+    color: white;
+}
+#input{
+    width: 70%;
+    height: 40px;
+}
+.btnAdd {
+    background-color: gray;
+    width: 15%;
+    height: 40px;
+}
+.content {
+    font-size: 20px;
+}
+.even{
+    background-color: gainsboro;
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+}
+.odd{
+    background-color: white;
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+}
+.done{
+    text-decoration: line-through;
+    cursor: pointer;
+}
