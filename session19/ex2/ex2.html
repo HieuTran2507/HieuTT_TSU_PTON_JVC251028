@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SS19-EX2</title>
+    <link rel="stylesheet" href="./ex2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Task Management</p>
+      <div class="input_area">
+        <input type="text" id="input_content" placeholder="content" />
+        <input type="date" id="input_date" />
+        <select id="input_status">
+          <option value="" disable selected>Choose status</option>
+          <option value="start">start</option>
+          <option value="pending">pending</option>
+          <option value="finished">finished</option>
+        </select>
+        <input type="text" id="input_username" placeholder="username" />
+        <button class="btn_submit">Submit</button>
+      </div>
+      <div class="table_header">
+        <div class="hd_stt">#</div>
+        <div class="hd_content">content</div>
+        <div class="hd_date">due date</div>
+        <div class="hd_status">status</div>
+        <div class="hd_assignto">assign to</div>
+        <div class="hd_action">action</div>
+      </div>
+      <div class="tbl_content"></div>
+    </div>
+    <script src="./ex2.js"></script>
+  </body>
+</html>
