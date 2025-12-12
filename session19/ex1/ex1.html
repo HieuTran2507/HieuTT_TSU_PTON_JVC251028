@@ -8,14 +8,37 @@
   </head>
   <body>
     <div class="container">
-      <p class="title">Register</p>
-      <label for="email">Email</label> <br />
-      <input type="text" name="" id="email" /> <br />
-      <label for="password">Password</label> <br />
-      <input type="password" name="" id="password" /> <br />
-      <label for="confirm_password">Confirm password</label> <br />
-      <input type="password" name="" id="confirm_password" /> <br />
-      <button class="btn_register">Register</button>
+      <h2>Register</h2>
+      <form action="" id="form">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="enter your email address"
+        />
+        <small class="error error-email"></small>
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="enter your password"
+        />
+        <small class="error error-password"></small>
+
+        <label for="confirm-password">Confirm password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirm-password"
+          placeholder="enter your confirm password"
+        />
+        <small class="error error-confirm-password"></small>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
     </div>
     <script src="./ex1.js"></script>
   </body>
