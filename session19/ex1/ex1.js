@@ -70,4 +70,3 @@ function validPassword(password) {
   return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
 }
 
-console.log("js loaded");
