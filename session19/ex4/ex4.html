@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SS19-Ex4</title>
-    <link rel="stylesheet" href="./ex4.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./ex4.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Todo App</h1>
-    
-        <div class="input-area">
-            <input type="text" name="input-task" id="input-task" placeholder="Add your new task">
-            <button id="add-btn">+</button>
-        </div>
+      <h1>Todo App</h1>
 
-        <div id="task-list"></div>
+      <div class="input-area">
+        <input
+          type="text"
+          name="input-task"
+          id="input-task"
+          placeholder="Add your new task"
+        />
+        <button id="add-btn">+</button>
+      </div>
 
-        <div class="pending-task">
-            <span id="task-count">You have 0 pending tasks</span>
-            <button id="clear-btn">Clear all</button>
-        </div>
+      <div id="task-list"></div>
+
+      <div class="pending-task">
+        <span id="task-count">You have 0 pending tasks</span>
+        <button id="clear-btn">Clear all</button>
+      </div>
     </div>
     <script src="./ex4.js"></script>
-</body>
+  </body>
 </html>

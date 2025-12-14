@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bookmark Manager</h1>
+      <button id="addBookmarkBtn" class="add-btn">ADD BOOKMARK</button>
+
+      <div id="bookmarksList" class="bookmarks-list"></div>
+
+      <!-- Modal thêm bookmark -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add Bookmark</h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <label for="websiteName">Website Name</label>
+            <input
+              type="text"
+              id="websiteName"
+              placeholder="Nhập tên website"
+            />
+
+            <label for="websiteURL">Website URL</label>
+            <input type="url" id="websiteURL" placeholder="Nhập URL website" />
+
+            <button id="saveBtn" class="save-btn">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
