@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="./ex5.css" />
   </head>
   <body>
+    <div class="container">
+      <button class="addBookmarkBtn" id="addBookmarkBtn">ADD BOOKMARK</button>
+
+      <div class="bookmarksList" id="bookmarksList"></div>
+      
+      </div>
+
+      <div class="modal" id="modal">
+        <div class="modalContent">
+          <div class="modalHeader">
+            <div class="modalTitle">Add Bookmarks</div>
+            <div class="closeBtn" id="closeBtn">X</div>
+          </div>
+          <div class="content">
+            <label for="websiteName">Website name</label>
+            <input type="text" name="websiteName" id="websiteName"/>
+            <label for="websiteURL">Website URL</label>
+            <input type="text" name="websiteURL" id="websiteURL">
+            <button class="saveBtn" id="saveBtn">Save</button>
+          </div>
+        </div>
+    </div>
     <script src="./ex5.js"></script>
   </body>
 </html>

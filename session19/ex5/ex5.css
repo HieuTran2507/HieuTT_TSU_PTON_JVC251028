@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+.container{
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.addBookmarkBtn {
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin: 10px auto;
+    background-color: rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.addBookmarkBtn:hover{
+    background-color: rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+
+/* modal style */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.modalContent {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
+}
+.modalHeader {
+    background-color: #8b5cf6;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.closeBtn {
+    cursor: pointer;
+}
+.content{
+    margin: 10px 20px;
+}
+#websiteName, #websiteURL{
+    display: block;
+    margin: 5px 0 15px 0;
+    width: 100%;
+    border: 1px solid black;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.saveBtn {
+    padding: 5px 30px;
+    background-color: #8b5cf6;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.saveBtn:hover{
+    background-color: #a855f7;
+    transform: translateY(-2px);
+}
+
+/* render bookmarks */
+.bookmarksList {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.divItem{
+    background-color: gainsboro;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.divItem:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.itemName{
+    font-size: 18px;
+    font-weight: 700;
+}
+.itemURL{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.deleteBtn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: red;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.deleteBtn:hover{
+    transform: translateY(-2px);
+    height: 30px;
+    width: 30px;
+}
