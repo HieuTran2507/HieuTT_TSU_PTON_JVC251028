@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/register.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <form class="form" id="formRegister">
+        <header class="form-header">
+          <div class="title">Đăng ký tài khoản</div>
+          <div class="subtitle">Đăng ký tài khoản để sử dụng dịch vụ</div>
+        </header>
+
+        <main class="form-main">
+          <div class="form-group1">
+            <div class="input1">
+              <label for="" class="form-label">Họ và tên đệm</label>
+              <input type="text" class="form-input1" id="firstname" />
+              <div
+                id="firstnameErr"
+                style="color: red; font-size: 14px; margin-top: 7px; display: none;"
+              >
+                Họ và tên đệm trống
+              </div>
+            </div>
+
+            <div class="input1">
+              <label for="" class="form-label">Tên</label>
+              <input type="text" class="form-input1" id="lastname" />
+              <div
+                id="lastnameErr"
+                style="color: red; font-size: 14px; margin-top: 7px; display: none;"
+              >
+                Tên trống
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="form-label">Email</label>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="you@company.com"
+              id="email"
+            />
+            <div
+              id="emailErr"
+              style="color: red; font-size: 14px; margin-top: 7px; display: none;"
+            >
+              Email trống
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-input" id="password" />
+            <div
+              id="passwordErr"
+              style="color: red; font-size: 14px; margin-top: 7px; display: none;"
+            >
+              Password trống
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="form-label">Xác nhận mật khẩu</label>
+            <input type="password" class="form-input" id="confirmPassword" />
+            <div
+              id="confirmPasswordErr"
+              style="color: red; font-size: 14px; margin-top: 7px; display: none;"
+            >
+              Xác nhận password trống
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" class="input-checkbox" id="checkbox" />
+            <span class="policy"></span>
+              &nbsp; Bạn có đồng ý với &nbsp;
+              <a href="">chính sách điều khoản</a></span
+            >
+          </div>
+          <div
+            id="checkboxErr"
+            style="color: red; font-size: 14px; margin-top: 7px; display: none; "
+            >
+              bạn chưa đồng ý với điều khoản
+            </div>
+        </main>
+
+        <footer class="form-footer">
+          <button type="submit" class="register-btn">Đăng ký</button>
+          <div class="login">
+            Bạn đã có tài khoản? <a href="../pages/login.html">Đăng nhập</a>
+          </div>
+        </footer>
+      </form>
+    </div>
+    <script src="../JS/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  width: 535px;
+}
+
+.form-header {
+  margin-bottom: 64px;
+}
+
+.title {
+  color: #090914;
+  font-size: 52px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #52525b;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.form-label {
+  color: #090914;
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-input {
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  padding: 0 16px;
+}
+
+.form-function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.remember-account {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.form-function1 {
+  display: none;
+}
+
+.agree {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.input-checkbox {
+  height: 19px;
+  width: 19px;
+}
+
+.remember-account span,
+.agree span {
+  color: #18181b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#errAlert {
+  width: 100%;
+  margin: auto;
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.form-button {
+  height: 55px;
+  background-color: #2563eb;
+  border-radius: 12px;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-bottom: 34px;
+}
+
+.form-redirect {
+  text-align: center;
+}
+
+.form-redirect span {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-redirect a,
+.forgot-account a,
+.policy a {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 450px;
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .form-body {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .form-group {
+    gap: 6px;
+  }
+
+  .form-label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .form-input {
+    height: 48px;
+    width: 100%;
+  }
+  .form-function {
+    display: none;
+  }
+  .form-function1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .form-redirect {
+    display: none;
+  }
+  .form-button {
+    height: 48px;
+  }
+}
