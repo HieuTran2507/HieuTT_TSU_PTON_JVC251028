@@ -83,11 +83,29 @@
 
         <div class="content">
           <div class="tbl-header">
-            <div class="header-nor header1">Mã sản phẩm</div>
+            <div class="header-nor header1 sort-wrapper" id="sortCode">
+              Mã sản phẩm ↓
+              <div class="sort-menu" id="sortCodeMenu">
+                <div data-sort="code_asc">Mã A → Z</div>
+                <div data-sort="code_desc">Mã Z → A</div>
+              </div>
+            </div>
 
-            <div class="header-nor header2">Tên sản phẩm ↓</div>
+            <div class="header-nor header2 sort-wrapper" id="sortName">
+              Tên sản phẩm ↓
+              <div class="sort-menu" id="sortNameMenu">
+                <div data-sort="name_asc">Tên A → Z</div>
+                <div data-sort="name_desc">Tên Z → A</div>
+              </div>
+            </div>
 
-            <div class="header-nor header3">Giá ↓</div>
+            <div class="header-nor header3 sort-wrapper" id="sortPrice">
+              Giá ↓
+              <div class="sort-menu" id="sortPriceMenu">
+                <div data-sort="price_asc">Giá thấp → cao</div>
+                <div data-sort="price_desc">Giá cao → thấp</div>
+              </div>
+            </div>
 
             <div class="header-nor header4">Số lượng</div>
 
