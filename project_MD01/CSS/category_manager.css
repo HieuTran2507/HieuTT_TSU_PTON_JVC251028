@@ -266,6 +266,8 @@
   color: white;
   background-color: #0e73f6;
 }
+
+/* menu logout */
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -283,6 +285,8 @@
   text-decoration: none;
   color: black;
 }
+
+/* sort */
 .sort-wrapper {
   position: relative;
   cursor: pointer;

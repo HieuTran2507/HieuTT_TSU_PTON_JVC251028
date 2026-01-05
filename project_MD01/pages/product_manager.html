@@ -6,9 +6,7 @@
     <title>product manager</title>
     <link rel="stylesheet" href="../CSS/style.css" />
     <link rel="stylesheet" href="../CSS/product_manager.css" />
-    <link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
-</link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
   </head>
   <body>
     <div class="container">
@@ -57,7 +55,55 @@
           </div>
         </div>
 
-        <div class="content"></div>
+        <div class="function1">
+            <div class="product-title">Sản phẩm</div>
+            <button class="add-btn" id="addProductBtn">Thêm danh mục mới</button>
+        </div>
+
+        <div class="function2">
+          <select name="category" id="category">
+            <option value="" >Lọc theo danh mục</option>
+            <option value="all" >Tất cả</option>
+            <option value="on">Đang hoạt động</option>
+            <option value="off" >Ngừng hoạt động</option>
+          </select>
+
+          <select name="status" id="status">
+            <option value="" >Lọc theo trạng thái</option>
+            <option value="all" >Tất cả</option>
+            <option value="on">Đang hoạt động</option>
+            <option value="off" >Ngừng hoạt động</option>
+          </select>
+
+          <div class="search-bar">
+            <input type="text" class="search-tbx" placeholder="Tìm kiếm danh mục theo tên" id="searchInput">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="tbl-header">
+            <div class="header-nor header1">Mã sản phẩm</div>
+
+            <div class="header-nor header2">Tên sản phẩm ↓</div>
+
+            <div class="header-nor header3">Giá ↓</div>
+
+            <div class="header-nor header4">Số lượng</div>
+
+            <div class="header-nor header5">Giảm giá</div>
+
+            <div class="header-nor header6">Trạng Thái</div>
+
+            <div class="header-nor header7">Chức năng</div>
+
+          </div>
+         
+          <div id="tbl-content"> </div>
+        </div>
+        
+        <div id="pagination"></div>
+        
       </div>
     </div>
     <script src="../JS/product_manager.js"></script>

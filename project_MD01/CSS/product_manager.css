@@ -78,6 +78,149 @@
   cursor: pointer;
   color: #0e73f6;
 }
+
+/* function 1 */
+.function1 {
+  display: flex;
+  justify-content: space-between;
+}
+.product-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #252c32;
+  margin-top: 32px;
+  margin-left: 24px;
+}
+.add-btn {
+  width: 166px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #4094f7;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-right: 24px;
+}
+
+/* function 2 */
+.function2 {
+  display: flex;
+  justify-content: end;
+  margin-top: 12px;
+  gap: 8px;
+}
+#status,
+#category {
+  height: 40px;
+  width: 259px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 14px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 8px;
+}
+
+.search-bar {
+  position: relative;
+  margin-right: 24px;
+}
+.search-tbx {
+  height: 40px;
+  width: 254px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 14px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 8px;
+}
+.fa-magnifying-glass {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.fa-magnifying-glass:hover {
+  cursor: pointer;
+}
+
+/* content */
+.content {
+  margin: 11px 24px 24px 24px;
+}
+.tbl-header {
+  display: flex;
+  background-color: #f9fafb;
+  border-bottom: 1px solid rgb(189, 189, 189);
+}
+.header-nor {
+  height: 44px;
+  /* border: 1px solid green; */
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 24px;
+  padding-top: 13px;
+  color: #667085;
+}
+.header1 {
+  /* width: 162px;  163/1112 */
+  flex: 15;
+}
+.header2 {
+  /* width: 171px; 171/1112 */
+  flex: 15;
+}
+.header3 {
+  /* width: 149px; 149/1112 */
+  flex: 13;
+}
+.header4 {
+  /* width: 149px; 149/1112 */
+  flex: 13;
+}
+.header5 {
+  /* width: 149px; 149/1112 */
+  flex: 13;
+}
+.header6 {
+  /* width: 164px; 164/1112 */
+  flex: 15;
+}
+.header7 {
+  /* width: 169px; 169/1112 */
+  flex: 16;
+}
+
+/* pagination */
+#pagination {
+  margin: 24px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pageBtn {
+  height: 32px;
+  width: 32px;
+  color: #051b44;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 4px;
+  border: 1px solid rgb(189, 189, 189);
+}
+.pageBtn:hover {
+  color: white;
+  background-color: #0e73f6;
+}
+.activePage {
+  color: white;
+  background-color: #0e73f6;
+}
+
+/* menu logout */
 .fa-folder,
 .fa-folder-open,
 .fa-home {
