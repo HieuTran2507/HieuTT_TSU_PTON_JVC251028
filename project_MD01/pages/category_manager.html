@@ -60,7 +60,7 @@
 
         <div class="function1">
           <div class="category-title">Danh mục</div>
-          <button class="add-btn">Thêm danh mục mới</button>
+          <button class="add-btn" id="addCategoryBtn">Thêm danh mục mới</button>
         </div>
 
         <div class="function2">
@@ -117,26 +117,47 @@
         <!-- Body -->
         <div class="modal-body">
           <div class="form-group">
-            <label>Mã danh mục <span class="required">*</span></label>
-            <input type="text" placeholder="Nhập mã danh mục" />
+            <label>Mã danh mục <span class="required">*</span>
+              <span
+              id="errCategoryCode"
+              style="
+                color: red;
+                display: none;
+              "
+              >
+                Mã danh mục trống
+              </span>
+            </label>
+            
+            <input type="text" placeholder="Nhập mã danh mục" id="addCategoryCode"/>
           </div>
 
           <div class="form-group">
-            <label>Tên danh mục <span class="required">*</span></label>
-            <input type="text" placeholder="Nhập tên danh mục" />
+            <label>Tên danh mục <span class="required">*</span>
+              <span
+              id="errCategoryName"
+              style="
+                color: red;
+                display: none;
+              "
+              >
+                Tên danh mục trống
+              </span>
+            </label>
+            <input type="text" placeholder="Nhập tên danh mục" id="addCategoryName"/>
           </div>
 
           <div class="form-group">
             <label>Trạng thái</label>
             <div class="radio-group">
               <label class="radio">
-                <input type="radio" name="status" checked />
+                <input type="radio" name="status" checked value="ACTIVE"/>
                 <span class="checkmark"></span>
                 Đang hoạt động
               </label>
 
               <label class="radio">
-                <input type="radio" name="status" />
+                <input type="radio" name="status" value="INACTIVE"/>
                 <span class="checkmark"></span>
                 Ngừng hoạt động
               </label>
@@ -147,8 +168,8 @@
 
         <!-- Footer -->
         <div class="modal-footer">
-          <button class="btn btn-cancel">Hủy</button>
-          <button class="btn btn-primary">Thêm</button>
+          <button class="btn btn-cancel" id="btnCancel">Hủy</button>
+          <button class="btn btn-primary" id="btnAdd">Thêm</button>
         </div>
       </div>
     </div>

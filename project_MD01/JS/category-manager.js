@@ -15,6 +15,20 @@ const sortName = document.getElementById("sortName");
 const sortNameMenu = document.getElementById("sortNameMenu");
 const sortCode = document.getElementById("sortCode");
 const sortCodeMenu = document.getElementById("sortCodeMenu");
+const addCategoryBtn = document.getElementById("addCategoryBtn");
+const categoryModal = document.getElementById("categoryModal");
+const btnCancel = document.getElementById("btnCancel");
+const btnClose = document.getElementById("btnClose");
+const btnAdd = document.getElementById("btnAdd");
+const addCategoryName = document.getElementById("addCategoryName");
+const addCategoryCode = document.getElementById("addCategoryCode");
+const errCategoryName = document.getElementById("errCategoryName");
+const errCategoryCode = document.getElementById("errCategoryCode");
+const editItem = document.getElementById("editItem");
+const deleteItem = document.getElementById("deleteItem");
+let isEditMode = false;
+let editingCategoryId = null;
+
 
 // show user name
 if (userLoginLocal) {
@@ -121,7 +135,7 @@ function getPageCount() {
 sortName.addEventListener("click", function (e) {
   e.stopPropagation();
   sortNameMenu.style.display =
-    sortNameMenu.style.display === "block" ? "none" : "block";
+  sortNameMenu.style.display === "block" ? "none" : "block";
 });
 document.addEventListener("click", function () {
   sortNameMenu.style.display = "none";
@@ -131,11 +145,24 @@ document.addEventListener("click", function () {
 sortCode.addEventListener("click", function (e) {
   e.stopPropagation();
   sortCodeMenu.style.display =
-    sortCodeMenu.style.display === "block" ? "none" : "block";
+  sortCodeMenu.style.display === "block" ? "none" : "block";
 });
 
 document.addEventListener("click", function () {
   sortCodeMenu.style.display = "none";
+});
+
+// xử lý đóng mở modal
+addCategoryBtn.addEventListener("click", function(e){
+  e.stopPropagation();
+  categoryModal.style.display =
+  categoryModal.style.display === "flex" ? "none" : "flex";
+});
+btnCancel.addEventListener("click", function () {
+  resetAndClose();
+});
+btnClose.addEventListener("click", function () {
+  resetAndClose();
 });
 
 //-----------------------------------------------
@@ -180,12 +207,72 @@ function render(page) {
     const div_function = document.createElement("div");
     div_function.className = "item-nor item4";
     div_function.innerHTML = `
-        <img src="../images/trash_bin.png" alt="" class="function-icon">
-        <img src="../images/pencil.png" alt="" class="function-icon">
+        <img src="../images/trash_bin.png" alt="" class="function-icon deleteItem" data-id="${data[i].id}">
+        <img src="../images/pencil.png" alt="" class="function-icon editItem" data-id="${data[i].id}">
     `;
     div_item.appendChild(div_function);
   }
 }
+
+// edit
+tblContent.addEventListener("click", function(e){
+  const editBtn = e.target.closest(".editItem");
+  if (!editBtn) return;
+
+  // 1) lấy dữ liệu bằng id
+  const id = Number(editBtn.dataset.id);
+  const category = categoryLocal.find((item) => item.id === id);
+  if (!category) return;
+
+  // 2) bật chế độ edit
+  isEditMode = true;
+  editingCategoryId = id;
+
+  // modal
+  // 3) chỉnh sửa tiêu đề và nút
+  document.querySelector(".modal-header h2").innerText = "Chỉnh sửa danh mục";
+  btnAdd.innerText = "Cập nhật";
+  
+  // 4) đổ dữ liệu vào modal
+  addCategoryCode.value = category.category_code;
+  addCategoryName.value = category.category_name;
+  document.querySelector(
+    `input[name="status"][value="${category.status}"]`
+  ).checked = true;
+
+  // 5) mở modal
+  categoryModal.style.display = "flex";
+
+});
+
+// delete
+tblContent.addEventListener("click", function (e) {
+  const deleteBtn = e.target.closest(".deleteItem");
+  if (!deleteBtn) return;
+
+  const id = Number(deleteBtn.dataset.id);
+
+  const isConfirm = confirm("Bạn có chắc muốn xóa danh mục này không?");
+  if (!isConfirm) return;
+
+  // 1) xóa khỏi mảng
+  categoryLocal = categoryLocal.filter((item) => item.id !== id);
+
+  // 2) lưu lại localStorage
+  localStorage.setItem("categories", JSON.stringify(categoryLocal));
+
+  // 3) cập nhật filteredCategories
+  filteredCategories = [...categoryLocal];
+
+  // 4) xử lý trường hợp xóa item cuối trang
+  const pageCount = Math.ceil(filteredCategories.length / itemsPerPage);
+  if (currentPage > pageCount) currentPage = pageCount || 1;
+
+  // 5) render lại
+  render(currentPage);
+  renderPagination();
+});
+
 
 // page button render
 function renderPagination() {
@@ -275,6 +362,139 @@ function sortCategories(type) {
   render(currentPage);
   renderPagination();
 }
+
+// empty validate function
+function emptyValidate(chkvar, err, type) {
+  if (!chkvar) {
+    err.style.display = "inline";
+    if(type=="code") addCategoryCode.style.border = "1px solid red";
+    if(type=="name") addCategoryName.style.border = "1px solid red";
+    
+  } else {
+    err.style.display = "none";
+    if(type=="code") addCategoryCode.style.border = "1px solid #cccccc";
+    if(type=="name") addCategoryName.style.border = "1px solid #cccccc";
+  }
+}
+
+function resetAndClose(){
+  // reset modal
+    isEditMode = false;
+    editingCategoryId = null;
+    btnAdd.innerText = "Thêm";
+    document.querySelector(".modal-header h2").innerText = "Thêm mới danh mục";
+    addCategoryCode.value = "";
+    addCategoryName.value = "";
+    document.querySelector('input[name="status"][value="ACTIVE"]').checked = true;
+    addCategoryCode.style.border = "1px solid #cccccc";
+    addCategoryName.style.border = "1px solid #cccccc";
+    errCategoryCode.innerHTML = "Mã danh mục trống";
+    errCategoryName.innerHTML = "Tên danh mục trống";
+    errCategoryCode.style.display = "none";
+    errCategoryName.style.display = "none";
+    // đóng modal
+    categoryModal.style.display = "none";
+}
+
+// thêm danh mục mới
+btnAdd.addEventListener("click", function(e){
+  const code = addCategoryCode.value.trim();
+  const name = addCategoryName.value.trim();
+  const status = document.querySelector(`input[name = "status"]:checked`)?.value;
+
+  // 1) validate rỗng
+  emptyValidate(code, errCategoryCode, "code");
+  emptyValidate(name, errCategoryName, "name");
+
+  // 2) validate trùng mã
+  let isCodeExist = false;
+  if (code !== "") {
+    isCodeExist = categoryLocal.some(
+      (item) =>
+        item.category_code.toLowerCase() === code.toLowerCase() &&
+        (!isEditMode || item.id !== editingCategoryId)
+    );
+
+    if (isCodeExist) {
+      errCategoryCode.innerHTML = "Mã danh mục trùng";
+      errCategoryCode.style.display = "inline";
+      addCategoryCode.style.border = "1px solid red";
+    }
+  }
+
+  // 3) validate trùng tên
+  let isNameExist = false;
+  if (name !== "") {
+    isNameExist = categoryLocal.some(
+      (item) =>
+        item.category_name.toLowerCase() === name.toLowerCase() &&
+        (!isEditMode || item.id !== editingCategoryId)
+    );
+
+    if (isNameExist) {
+      errCategoryName.innerHTML = "Tên danh mục trùng";
+      errCategoryName.style.display = "inline";
+      addCategoryName.style.border = "1px solid red";
+    }
+  }
+
+  // 4) kiểm tra và lưu vào local
+  if(
+      code !== "" &&
+      name !== "" &&
+      !isCodeExist && 
+      !isNameExist
+  ){
+    if(isEditMode){
+      // ===edit===
+      const index = categoryLocal.findIndex((item) => item.id === editingCategoryId);
+
+      categoryLocal[index].category_code = code;
+      categoryLocal[index].category_name = name;
+      categoryLocal[index].status = status;
+
+      alert("Cập nhật danh mục thành công");
+
+      // 5) lưu local storage
+      localStorage.setItem("categories", JSON.stringify(categoryLocal));
+
+      // 6) reset form và đóng modal
+      resetAndClose();
+    } else{
+      
+      // ===add===
+      // tạo object mới
+      const newCategory = {
+        id: Math.ceil(Math.random() * 100000),
+        category_code: code,
+        category_name: name,
+        image: "",
+        status: status,
+        created_at: new Date().toISOString(),
+      }
+
+      // thêm vào local storage
+      categoryLocal.push(newCategory);
+
+      // thông báo
+      alert("thêm danh mục thành công");
+
+      // 5) lưu local storage
+      localStorage.setItem("categories", JSON.stringify(categoryLocal));
+
+      // 6) reset form và đóng modal
+      resetAndClose();
+      
+    }
+    
+    // 7) Render lại dữ liệu
+    filteredCategories = [...categoryLocal];
+    currentPage = 1;
+    render(currentPage);
+    renderPagination();
+  }
+
+});
 
 // main program
 render(currentPage);

@@ -308,7 +308,7 @@
 }
 /* modal */
 /* Overlay */
-.modal-overlay {
+#categoryModal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);

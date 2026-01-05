@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+}
+.navigation {
+  width: 240px;
+  height: 100vh;
+  background-color: #f6f8f9;
+}
+.main {
+  flex: 1;
+}
+.header {
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid rgb(189, 189, 189);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.avatar {
+  height: 36px;
+  width: 36px;
+  margin-right: 24px;
+  margin-left: 12px;
+}
+.avatar:hover {
+  cursor: pointer;
+}
+.bell-icon {
+  height: 24px;
+  width: 24px;
+}
+#userLogin {
+  margin-right: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  margin-left: 14px;
+  margin-bottom: 16px;
+}
+.fire-logo {
+  height: 24px;
+  width: 24px;
+}
+.ecommerce {
+  color: #252c32;
+  font-size: 18px;
+  font-weight: 600;
+}
+.item-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item {
+  display: flex;
+  height: 32px;
+  width: 208px;
+  align-items: center;
+  padding: 4px 12px 4px 8px;
+}
+.item:hover i,
+.item:hover .item-text {
+  cursor: pointer;
+  color: #0e73f6;
+}
+.item:hover {
+  background-color: #d7edff;
+}
+.key_item {
+  background-color: #d7edff;
+}
+.key_item i,
+.key_item .item-text {
+  cursor: pointer;
+  color: #0e73f6;
+}
+.fa-folder,
+.fa-folder-open,
+.fa-home {
+  color: #3f3f46;
+  height: 24px;
+  width: 24px;
+  margin-right: 9px;
+  margin-top: 8px;
+}
+.item-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3f3f46;
+  text-decoration: none;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: gainsboro;
+  width: 150px;
+  padding: 15px;
+  position: absolute;
+  right: 5px;
+  top: 60px;
+  border-radius: 5px;
+  display: none;
+}
+.item-menu a {
+  text-decoration: none;
+  color: black;
+}
