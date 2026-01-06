@@ -20,6 +20,10 @@ const addProductBtn = document.getElementById("addProductBtn");
 const productModal = document.getElementById("productModal");
 const btnClose = document.getElementById("btnClose");
 const btnCancel = document.getElementById("btnCancel");
+const btnAddProduct = document.getElementById("btnAddProduct");
+const addProductCode = document.getElementById("addProductCode");
+const addProductName = document.getElementById("addProductName");
+const addProductCategory = document.getElementById("addProductCategory");
 
 const userLoginLocal = JSON.parse(localStorage.getItem("userLogin"));
 
@@ -370,6 +374,11 @@ function sortCategories(type) {
   render(currentPage);
   renderPagination();
 }
+
+// thêm mới sản phẩm
+btnAddProduct.addEventListener("click", function(e){
+
+});
 
 // main progran
 render(currentPage);
