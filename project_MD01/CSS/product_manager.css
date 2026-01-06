@@ -102,6 +102,7 @@
   font-weight: 600;
   margin-top: 24px;
   margin-right: 24px;
+  cursor: pointer;
 }
 
 /* function 2 */
@@ -321,4 +322,132 @@
 }
 .sort-menu div:hover {
   background: #f5f5f5;
+}
+
+/* modal */
+/* Overlay */
+#productModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  display: none;
+}
+/* Modal box */
+.modal-box {
+  background: white;
+  width: 900px;
+  height: 705px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* Header */
+.modal-header {
+  padding: 23px 24px 13px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.modal-close {
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* body */
+#productForm{
+  width: calc(100% - 48px);
+  margin: auto;
+}
+.form-row {
+  display: flex;
+  gap: 23px;
+  margin-bottom: 24px;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-group input,
+.form-group select{
+  border-radius: 8px;
+  height: 44px;
+  border: 1px solid #d0d5dd;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #1677ff;
+}
+.radio-group {
+  display: flex;
+  gap: 14px;
+  /* margin-top: 21px; */
+}
+.radio-group label{
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.form-group textarea {
+  border-radius: 8px;
+  height: 92px;
+  border: 1px solid #d0d5dd;
+  padding: 8px 12px;
+  resize: none;
+}
+.form-group span {
+  color: red;
+}
+
+/* Footer */
+.modal-footer {
+  border-top: 1px solid #d0d5dd;
+  display: flex;
+  justify-content: flex-end;
+  gap: 13px;
+  margin-top: 24px;
+  padding-top: 24px;
+}
+
+/* Button */
+.btn-cancel {
+  background: #f0f0f0;
+  height: 44px;
+  width: 72px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-primary{
+  background: #007AFF;
+  border: none;
+  height: 44px;
+  width: 86px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Active */
+.modal.show,
+.modal-overlay.show {
+  display: block;
 }

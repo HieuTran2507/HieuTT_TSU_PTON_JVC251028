@@ -16,6 +16,10 @@ const sortName = document.getElementById("sortName");
 const sortNameMenu = document.getElementById("sortNameMenu");
 const sortPrice = document.getElementById("sortPrice");
 const sortPriceMenu = document.getElementById("sortPriceMenu");
+const addProductBtn = document.getElementById("addProductBtn");
+const productModal = document.getElementById("productModal");
+const btnClose = document.getElementById("btnClose");
+const btnCancel = document.getElementById("btnCancel");
 
 const userLoginLocal = JSON.parse(localStorage.getItem("userLogin"));
 
@@ -188,6 +192,24 @@ sortPrice.addEventListener("click", function (e) {
 });
 document.addEventListener("click", function () {
   sortPriceMenu.style.display = "none";
+});
+
+// function reset and close
+function resetAndClose(){
+  // đóng modal
+  productModal.style.display = "none";
+}
+// xử lý đóng mở modal
+addProductBtn.addEventListener("click", function(e){
+  e.stopPropagation();
+  productModal.style.display =
+  productModal.style.display === "flex" ? "none" : "flex";
+});
+btnCancel.addEventListener("click", function () {
+  resetAndClose();
+});
+btnClose.addEventListener("click", function () {
+  resetAndClose();
 });
 
 function formatPrice(price) {

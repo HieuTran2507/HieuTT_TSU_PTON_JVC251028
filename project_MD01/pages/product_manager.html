@@ -124,6 +124,95 @@
         
       </div>
     </div>
+
+  <!-- modal thêm sản phẩm -->
+  <!-- Overlay -->
+  <div class="modal-overlay" id="productModal">
+    <!-- Modal -->
+    <div class="modal-box">
+      <!-- Header -->
+      <div class="modal-header">
+        <h2>Thêm mới sản phẩm</h2>
+        <span class="modal-close" id="btnClose">×</span>
+      </div>
+
+      <!-- body -->
+      <form id="productForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mã sản phẩm <span>*</span></label>
+            <input type="text" required />
+          </div>
+          <div class="form-group">
+            <label>Tên sản phẩm <span>*</span></label>
+            <input type="text" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Danh mục <span>*</span></label>
+            <select required>
+              <option value="">-- Chọn danh mục --</option>
+              <option>Điện thoại</option>
+              <option>Laptop</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Trạng thái</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="status" checked />
+                Đang hoạt động
+              </label>
+              <label>
+                <input type="radio" name="status" />
+                Ngừng hoạt động
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Số lượng</label>
+            <input type="number" value="1" min="1" />
+          </div>
+          <div class="form-group">
+            <label>Giá</label>
+            <input type="number" value="10000000" />
+          </div>
+          <div class="form-group">
+            <label>Giảm giá (%)</label>
+            <input type="number" value="10" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Hình ảnh <span>*</span></label>
+            <input type="text" required />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Chi tiết sản phẩm</label>
+            <textarea class="txt-area"></textarea>
+          </div>
+        </div>
+        
+
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" id="btnCancel">Hủy</button>
+          <button type="submit" class="btn-primary">Thêm</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
     <script src="../JS/product_manager.js"></script>
   </body>
 </html>
