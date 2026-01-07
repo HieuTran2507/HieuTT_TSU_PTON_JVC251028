@@ -361,7 +361,6 @@
   cursor: pointer;
   color: #666;
 }
-
 /* body */
 #productForm{
   width: calc(100% - 48px);
@@ -414,10 +413,11 @@
   padding: 8px 12px;
   resize: none;
 }
-.form-group span {
-  color: red;
+.txt-area{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
 /* Footer */
 .modal-footer {
   border-top: 1px solid #d0d5dd;
@@ -427,7 +427,6 @@
   margin-top: 24px;
   padding-top: 24px;
 }
-
 /* Button */
 .btn-cancel {
   background: #f0f0f0;
@@ -445,9 +444,21 @@
   border-radius: 10px;
   cursor: pointer;
 }
-
 /* Active */
 .modal.show,
 .modal-overlay.show {
   display: block;
+}
+.required {
+  color: red;
+}
+#errProductCode,
+#errProductName,
+#errProductCategory,
+#errProductPrice,
+#errProductPicture,
+#errProductStock
+{
+  color: red;
+  display: none;
 }

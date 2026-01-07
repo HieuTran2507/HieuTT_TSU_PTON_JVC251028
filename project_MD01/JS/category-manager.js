@@ -1,4 +1,6 @@
 let categoryLocal = JSON.parse(localStorage.getItem("categories")) || [];
+let productLocal = JSON.parse(localStorage.getItem("products")) || [];
+
 const tblContent = document.getElementById("tbl-content");
 const userLogin = document.getElementById("userLogin");
 const avatar = document.getElementById("avatar");
@@ -29,32 +31,7 @@ const deleteItem = document.getElementById("deleteItem");
 let isEditMode = false;
 let editingCategoryId = null;
 
-
-// show user name
-if (userLoginLocal) {
-  userLogin.innerHTML =
-    userLoginLocal.first_name + " " + userLoginLocal.last_name;
-} else {
-  userLogin.innerHTML = "";
-}
-
-// logout
-menu.style.display = "none";
-avatar.addEventListener("click", function (e) {
-  e.stopPropagation();
-  if (menu.style.display === "none") menu.style.display = "block";
-  else menu.style.display = "none";
-});
-
-logout.addEventListener("click", function () {
-  const isLogout = confirm("Bạn có chắc muốn đăng xuất không?");
-  if (isLogout) {
-    localStorage.removeItem("userLogin");
-    window.location.href = "login.html";
-  }
-});
-
-// insert data
+// ------------ INSERT DATA ------------------------------------------------------------------------
 let categories = [
   {
     id: 1,
@@ -125,47 +102,14 @@ let categories = [
 if (!localStorage.getItem("categories")) {
   localStorage.setItem("categories", JSON.stringify(categories));
 }
+// ------------------------------------------------------------------------------------------------
 
+// ---------- FUNCTION ----------------------------------------------------------------------------
 // lấy số trang
 function getPageCount() {
   return Math.ceil(filteredCategories.length / itemsPerPage);
 }
 
-// xử lý đóng mở sort name
-sortName.addEventListener("click", function (e) {
-  e.stopPropagation();
-  sortNameMenu.style.display =
-  sortNameMenu.style.display === "block" ? "none" : "block";
-});
-document.addEventListener("click", function () {
-  sortNameMenu.style.display = "none";
-});
-
-// xử lý đóng mở sort code
-sortCode.addEventListener("click", function (e) {
-  e.stopPropagation();
-  sortCodeMenu.style.display =
-  sortCodeMenu.style.display === "block" ? "none" : "block";
-});
-
-document.addEventListener("click", function () {
-  sortCodeMenu.style.display = "none";
-});
-
-// xử lý đóng mở modal
-addCategoryBtn.addEventListener("click", function(e){
-  e.stopPropagation();
-  categoryModal.style.display =
-  categoryModal.style.display === "flex" ? "none" : "flex";
-});
-btnCancel.addEventListener("click", function () {
-  resetAndClose();
-});
-btnClose.addEventListener("click", function () {
-  resetAndClose();
-});
-
-//-----------------------------------------------
 // content render
 function render(page) {
   tblContent.innerHTML = "";
@@ -213,66 +157,6 @@ function render(page) {
     div_item.appendChild(div_function);
   }
 }
-
-// edit
-tblContent.addEventListener("click", function(e){
-  const editBtn = e.target.closest(".editItem");
-  if (!editBtn) return;
-
-  // 1) lấy dữ liệu bằng id
-  const id = Number(editBtn.dataset.id);
-  const category = categoryLocal.find((item) => item.id === id);
-  if (!category) return;
-
-  // 2) bật chế độ edit
-  isEditMode = true;
-  editingCategoryId = id;
-
-  // modal
-  // 3) chỉnh sửa tiêu đề và nút
-  document.querySelector(".modal-header h2").innerText = "Chỉnh sửa danh mục";
-  btnAdd.innerText = "Cập nhật";
-  
-  // 4) đổ dữ liệu vào modal
-  addCategoryCode.value = category.category_code;
-  addCategoryName.value = category.category_name;
-  document.querySelector(
-    `input[name="status"][value="${category.status}"]`
-  ).checked = true;
-
-  // 5) mở modal
-  categoryModal.style.display = "flex";
-
-});
-
-// delete
-tblContent.addEventListener("click", function (e) {
-  const deleteBtn = e.target.closest(".deleteItem");
-  if (!deleteBtn) return;
-
-  const id = Number(deleteBtn.dataset.id);
-
-  const isConfirm = confirm("Bạn có chắc muốn xóa danh mục này không?");
-  if (!isConfirm) return;
-
-  // 1) xóa khỏi mảng
-  categoryLocal = categoryLocal.filter((item) => item.id !== id);
-
-  // 2) lưu lại localStorage
-  localStorage.setItem("categories", JSON.stringify(categoryLocal));
-
-  // 3) cập nhật filteredCategories
-  filteredCategories = [...categoryLocal];
-
-  // 4) xử lý trường hợp xóa item cuối trang
-  const pageCount = Math.ceil(filteredCategories.length / itemsPerPage);
-  if (currentPage > pageCount) currentPage = pageCount || 1;
-
-  // 5) render lại
-  render(currentPage);
-  renderPagination();
-});
-
 
 // page button render
 function renderPagination() {
@@ -396,6 +280,89 @@ function resetAndClose(){
     categoryModal.style.display = "none";
 }
 
+// ------------------------------------------------------------------------------------------------
+
+// ------------------ MAIN ------------------------------------------------------------------------
+
+render(currentPage);
+renderPagination();
+
+// show user name
+if (userLoginLocal) {
+  userLogin.innerHTML =
+    userLoginLocal.first_name + " " + userLoginLocal.last_name;
+} else {
+  userLogin.innerHTML = "";
+}
+
+// logout
+menu.style.display = "none";
+avatar.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (menu.style.display === "none") menu.style.display = "block";
+  else menu.style.display = "none";
+});
+
+logout.addEventListener("click", function () {
+  const isLogout = confirm("Bạn có chắc muốn đăng xuất không?");
+  if (isLogout) {
+    localStorage.removeItem("userLogin");
+    window.location.href = "login.html";
+  }
+});
+
+// SEARCH
+searchInput.addEventListener("input", applyFilter);
+
+// SORT STATUS
+statusSelect.addEventListener("change", applyFilter);
+
+// xử lý đóng mở sort name
+sortName.addEventListener("click", function (e) {
+  e.stopPropagation();
+  sortNameMenu.style.display =
+  sortNameMenu.style.display === "block" ? "none" : "block";
+});
+document.addEventListener("click", function () {
+  sortNameMenu.style.display = "none";
+});
+
+// xử lý đóng mở sort code
+sortCode.addEventListener("click", function (e) {
+  e.stopPropagation();
+  sortCodeMenu.style.display =
+  sortCodeMenu.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", function () {
+  sortCodeMenu.style.display = "none";
+});
+
+// SORT NAME
+sortNameMenu.addEventListener("click", (e) => {
+  const type = e.target.dataset.sort;
+  if (type) sortCategories(type);
+});
+
+// SORT CODE
+sortCodeMenu.addEventListener("click", (e) => {
+  const type = e.target.dataset.sort;
+  if (type) sortCategories(type);
+});
+
+// xử lý đóng mở modal
+addCategoryBtn.addEventListener("click", function(e){
+  e.stopPropagation();
+  categoryModal.style.display =
+  categoryModal.style.display === "flex" ? "none" : "flex";
+});
+btnCancel.addEventListener("click", function () {
+  resetAndClose();
+});
+btnClose.addEventListener("click", function () {
+  resetAndClose();
+});
+
 // thêm danh mục mới
 btnAdd.addEventListener("click", function(e){
   const code = addCategoryCode.value.trim();
@@ -421,6 +388,7 @@ btnAdd.addEventListener("click", function(e){
       addCategoryCode.style.border = "1px solid red";
     }
   }
+  else errCategoryCode.innerHTML = "Mã danh mục trống";
 
   // 3) validate trùng tên
   let isNameExist = false;
@@ -437,14 +405,16 @@ btnAdd.addEventListener("click", function(e){
       addCategoryName.style.border = "1px solid red";
     }
   }
+  else errCategoryName.innerHTML = "Tên danh mục trống";
 
   // 4) kiểm tra và lưu vào local
   if(
-      code !== "" &&
-      name !== "" &&
-      !isCodeExist && 
-      !isNameExist
-  ){
+    code !== "" &&
+    name !== "" &&
+    !isCodeExist && 
+    !isNameExist
+  )
+  {
     if(isEditMode){
       // ===edit===
       const index = categoryLocal.findIndex((item) => item.id === editingCategoryId);
@@ -489,26 +459,82 @@ btnAdd.addEventListener("click", function(e){
     
     // 7) Render lại dữ liệu
     filteredCategories = [...categoryLocal];
-    currentPage = 1;
+    // lấy trang hiện tại
+    const pageCount = Math.ceil(filteredCategories.length / itemsPerPage);
+    if (currentPage > pageCount) currentPage = pageCount || 1;
     render(currentPage);
     renderPagination();
   }
 
 });
 
-// main program
-render(currentPage);
-renderPagination();
+// edit
+tblContent.addEventListener("click", function(e){
+  const editBtn = e.target.closest(".editItem");
+  if (!editBtn) return;
 
-searchInput.addEventListener("input", applyFilter);
-statusSelect.addEventListener("change", applyFilter);
+  // 1) lấy dữ liệu bằng id
+  const id = Number(editBtn.dataset.id);
+  const category = categoryLocal.find((item) => item.id === id);
+  if (!category) return;
 
-sortNameMenu.addEventListener("click", (e) => {
-  const type = e.target.dataset.sort;
-  if (type) sortCategories(type);
+  // 2) bật chế độ edit
+  isEditMode = true;
+  editingCategoryId = id;
+
+  // modal
+  // 3) chỉnh sửa tiêu đề và nút
+  document.querySelector(".modal-header h2").innerText = "Chỉnh sửa danh mục";
+  btnAdd.innerText = "Cập nhật";
+  
+  // 4) đổ dữ liệu vào modal
+  addCategoryCode.value = category.category_code;
+  addCategoryName.value = category.category_name;
+  document.querySelector(
+    `input[name="status"][value="${category.status}"]`
+  ).checked = true;
+
+  // 5) mở modal
+  categoryModal.style.display = "flex";
+
 });
 
-sortCodeMenu.addEventListener("click", (e) => {
-  const type = e.target.dataset.sort;
-  if (type) sortCategories(type);
+// delete
+tblContent.addEventListener("click", function (e) {
+  const deleteBtn = e.target.closest(".deleteItem");
+  if (!deleteBtn) return;
+
+  const id = Number(deleteBtn.dataset.id);
+
+  // 1) kiểm tra danh mục có sản phẩm hay không
+  const hasProduct = productLocal.some(
+    (product) => product.category_id === id
+  );
+
+  if (hasProduct) {
+    alert("Không thể xóa danh mục vì vẫn còn sản phẩm thuộc danh mục này");
+    return;
+  }
+
+  const isConfirm = confirm("Bạn có chắc muốn xóa danh mục này không?");
+  if (!isConfirm) return;
+
+  // 2) xóa khỏi mảng
+  categoryLocal = categoryLocal.filter((item) => item.id !== id);
+
+  // 3) lưu lại localStorage
+  localStorage.setItem("categories", JSON.stringify(categoryLocal));
+
+  // 4) cập nhật filteredCategories
+  filteredCategories = [...categoryLocal];
+
+  // lấy trang hiện tại
+  const pageCount = Math.ceil(filteredCategories.length / itemsPerPage);
+  if (currentPage > pageCount) currentPage = pageCount || 1;
+
+  // 6) render lại
+  render(currentPage);
+  renderPagination();
 });
+
+// ------------------------------------------------------------------------------------------------
