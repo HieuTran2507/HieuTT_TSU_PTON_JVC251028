@@ -333,7 +333,6 @@ sortCode.addEventListener("click", function (e) {
   sortCodeMenu.style.display =
   sortCodeMenu.style.display === "block" ? "none" : "block";
 });
-
 document.addEventListener("click", function () {
   sortCodeMenu.style.display = "none";
 });
