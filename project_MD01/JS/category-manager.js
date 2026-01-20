@@ -7,7 +7,7 @@ const avatar = document.getElementById("avatar");
 const menu = document.getElementById("menu");
 const logout = document.getElementById("logout");
 let currentPage = 1;
-const itemsPerPage = 4;
+const itemsPerPage = 10;
 const pagination = document.getElementById("pagination");
 const userLoginLocal = JSON.parse(localStorage.getItem("userLogin"));
 let filteredCategories = [...categoryLocal];
@@ -110,7 +110,11 @@ function getPageCount() {
   return Math.ceil(filteredCategories.length / itemsPerPage);
 }
 
-// content render
+/**
+ * @description: hàm hiển thị danh sách danh mục
+ * @param {*} page số trang hiện tại 
+ * @author hiếu (13/1/2026)
+ */
 function render(page) {
   tblContent.innerHTML = "";
 
@@ -443,7 +447,7 @@ btnAdd.addEventListener("click", function(e){
       }
 
       // thêm vào local storage
-      categoryLocal.push(newCategory);
+      categoryLocal.unshift(newCategory);
 
       // thông báo
       alert("thêm danh mục thành công");
